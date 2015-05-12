@@ -37,13 +37,6 @@ public class e8 {
 		if (x1/8 == x2/8){
 			byte mask = (byte) (mask_start & mask_end);
 			screen[(width/8)*y + x1/8] |= mask; 
-		} else {
-			if (start_offset != 0){//this is necessary
-				screen[(width/8)*y + first_full_byte - 1] |= mask_start;
-			}
-			if(end_offset != 7){//this is necessary
-				screen[(width/8)*y + last_full_byte + 1] |= mask_end;
-			}
 		}
 		
 		
