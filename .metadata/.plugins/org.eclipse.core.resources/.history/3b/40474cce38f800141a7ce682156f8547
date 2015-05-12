@@ -1,0 +1,73 @@
+package Bit_manipulation;
+
+import java.util.ArrayList;
+
+/*
+ * An array A contains all the integers from 0 to n, except for one number which is missing. In this
+ * problem, we cannot access an entire integer in A with a single operation. The elements of A are 
+ * represented in binary, and the only operation we can use to access them is "fetch the jth bit of
+ * A[i]." which takes constant time. Write code to find the missing integer. Can you do it in O(n) time?
+ */
+public class e7 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		e7 e = new e7();
+		System.out.println(Integer.SIZE);
+		
+		//the highest bit is sign bit
+		System.out.println(Integer.MAX_VALUE);
+		System.out.println(Integer.toBinaryString(Integer.MAX_VALUE));// 31 oneBits
+		System.out.println(Integer.MIN_VALUE);
+		System.out.println(Integer.toBinaryString(Integer.MIN_VALUE));
+		
+		ArrayList<String>  array = new ArrayList<String>();
+		
+		int length = Integer.toBinaryString(55).length();
+		//////////////////////////////
+		for (int i = 0; i < 55; i++){
+			array.add(e.countlength(Integer.toBinaryString(i), length));//高位补0
+		}
+		//////////////////////////////
+		System.out.println(length);
+		System.out.println(array.get(6));
+		array.remove(6);
+		//System.out.println(e.findMissing(array,array.get(1).length()));
+	}
+	
+	public int findMissing(ArrayList<String> array, int size){
+		return findMissing(array,0,size);
+	}
+	
+	public int findMissing(ArrayList<String> input, int column, int size){
+		if(column >= size){
+			return 0;
+		}
+		ArrayList<String> oneBits = new ArrayList<String>(input.size() / 2);
+		ArrayList<String> zeroBits = new ArrayList<String>(input.size() / 2);
+		
+		//when we convert int to string, the significant bits do not show in string.
+		for(String s:input){
+			if(s.charAt(column) == '1'){
+				oneBits.add(s);
+			} else {
+				zeroBits.add(s);
+			}
+		}
+		if(oneBits.size() >= zeroBits.size()){
+			int v = findMissing(zeroBits, column + 1);
+			return (v << 1) | 0;
+		} else {
+			int v = findMissing(oneBits, column + 1);
+			return (v << 1) | 1;
+		}
+			
+	}
+	public String countlength(String s, int length){
+		while(s.length() < length){
+			s = "0" + s;
+		}
+		return s;
+	}
+
+}
