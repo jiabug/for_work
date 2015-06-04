@@ -30,6 +30,11 @@ public class introduction {
         System.out.println("s2:"+s2);
         String s3 = Integer.toBinaryString(536870911);
         System.out.println("s3:"+s3);
+        String s4 = Integer.toBinaryString(-1 << 3);
+        System.out.println("s4:" + s4 );
+        System.out.println(-5 << 3);
+        String s5 = Integer.toBinaryString(~(-1>>>(32-3)));
+        System.out.println("s5:" + s5);
 	}
 	
 	public boolean getBit(int num, int i){
@@ -44,13 +49,14 @@ public class introduction {
 		return num & (~(1<<i));
 	}
 	
-	//clear all bits from the most significant bit through i (inclusive).
+	//clear all bits from the most significant bit through i (inclusive). i是从右往左数，第一位是0
 	public int clearBit_1(int num, int i){
 		return num & ((1<<i) - 1);
 	}
 	//clear all bits from i through 0 (inclusive).
 	public int clearBit_2(int num, int i){
-		return (num & ~(-1>>>(31-i)));
+		return (num & ~(-1>>>(31-i)));//can not use ~0 << i because there is an operator bit.
+		//return (num & (-1 << (i+1)))
 	}
 	
 	public int updateBit(int num, int i, int v){

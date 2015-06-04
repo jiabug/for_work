@@ -11,7 +11,7 @@ public class e2 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		e2 printb = new e2();
-		System.out.println(printb.printBinary(0.55));
+		System.out.println(printb.printBinary(0.5));
 		System.out.println(printb.printBinary2(0.55));
 	}
 	public String printBinary(double num){
@@ -61,3 +61,4 @@ public class e2 {
 	}
 
 }
+

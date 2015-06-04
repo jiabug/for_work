@@ -129,7 +129,7 @@ public class e3 {
 		}
 		
 		if(origin == 0){
-			return "Error!";
+			return "Errßor!";
 		}
 		
 		while((origin & 1) == 0){

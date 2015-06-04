@@ -29,11 +29,11 @@ public class e7_better {
 	}
 	
 	public int findMissing(ArrayList<BitInteger> array){
-		return findMissing(array,BitInteger.INTEGER_SIZE - 1);
+		return findMissing(array,0);
 	}
 	
 	public int findMissing(ArrayList<BitInteger> input, int column){
-		if(column < 0 ){
+		if(column >= BitInteger.INTEGER_SIZE ){
 			return 0;
 		}
 		ArrayList<BitInteger> oneBits = new ArrayList<BitInteger>(input.size() / 2);
@@ -42,17 +42,17 @@ public class e7_better {
 		//when we convert int to string, the significant bits do not show in string.
 		for(BitInteger s:input){
 			//reverse the direction of index.    do not forget minus 1
-			if(s.fetch(column) == 1){
+			if(s.fetch(BitInteger.INTEGER_SIZE - column - 1) == 1){
 				oneBits.add(s);
 			} else {
 				zeroBits.add(s);
 			}
 		}
 		if(oneBits.size() >= zeroBits.size()){
-			int v = findMissing(zeroBits, column - 1);
+			int v = findMissing(zeroBits, column + 1);
 			return (v << 1) | 0;
 		} else {
-			int v = findMissing(oneBits, column - 1);
+			int v = findMissing(oneBits, column + 1);
 			return (v << 1) | 1;
 		}
 	}
