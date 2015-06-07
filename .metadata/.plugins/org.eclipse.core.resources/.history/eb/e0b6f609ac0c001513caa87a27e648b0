@@ -1,0 +1,9 @@
+package Mathematics_and_Probability;
+
+public class Sieve_of_Eratosthenes {
+	public void findprime(int max){
+		boolean [] array = new boolean[max+1];
+		
+	}
+
+}

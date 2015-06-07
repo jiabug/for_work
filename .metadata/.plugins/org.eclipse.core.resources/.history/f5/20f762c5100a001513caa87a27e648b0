@@ -1,0 +1,65 @@
+package Bit_manipulation;
+
+public class introduction {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		// 1、左移( << )
+        // 0000 0000 0000 0000 0000 0000 0000 0101 然后左移2位后，低位补0：//
+        // 0000 0000 0000 0000 0000 0000 0001 0100 换算成10进制为20
+        System.out.println(5 << 2);// 运行结果是20
+ 
+        // 2、右移( >> ) 高位补符号位
+        // 0000 0000 0000 0000 0000 0000 0000 0101 然后右移2位，高位补0：
+        // 0000 0000 0000 0000 0000 0000 0000 0001
+        System.out.println(5 >> 2);// 运行结果是1
+ 
+        // 3、无符号右移( >>> ) 高位补0
+        // 例如 -5换算成二进制后为：0101 取反加1为1011
+        // 1111 1111 1111 1111 1111 1111 1111 1011
+        // 我们分别对5进行右移3位、 -5进行右移3位和无符号右移3位：
+        //反过来的过程为  减1 取反 得到最终的值 
+        System.out.println(5 >> 3);// 结果是0
+        String s = Integer.toBinaryString(-5);
+        System.out.println("s:"+s);
+        System.out.println(-5 >> 3);// 结果是-1
+        String s1 = Integer.toBinaryString(-5>>3);
+        System.out.println("s1:"+s1);
+        System.out.println(-5 >>> 3);// 结果是536870911
+        String s2 = Integer.toBinaryString(-5>>>3);
+        System.out.println("s2:"+s2);
+        String s3 = Integer.toBinaryString(536870911);
+        System.out.println("s3:"+s3);
+        String s4 = Integer.toBinaryString(-1 << 3);
+        System.out.println("s4:" + s4 );
+        System.out.println(-5 << 3);
+        String s5 = Integer.toBinaryString(~(-1>>>(32-3)));
+        System.out.println("s5:" + s5);
+	}
+	
+	public boolean getBit(int num, int i){
+		return (((1<<i) & num) != 0);
+	}
+	
+	public int setBit(int num, int i){
+		return num | (1<<i);
+	}
+	//just clear the specific bit
+	public int clearBit(int num, int i){
+		return num & (~(1<<i));
+	}
+	
+	//clear all bits from the most significant bit through i (inclusive). i是从右往左数，第一位是0
+	public int clearBit_1(int num, int i){
+		return num & ((1<<i) - 1);
+	}
+	//clear all bits from i through 0 (inclusive).
+	public int clearBit_2(int num, int i){
+		return (num & ~(-1>>>(31-i)));//can not use -1 << i because there is an operator bit.
+	}
+	
+	public int updateBit(int num, int i, int v){
+		return ((num & ~(1<<i)) | (v<<i));
+	}
+
+}

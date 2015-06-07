@@ -1,0 +1,16 @@
+package Mathematics_and_Probability;
+
+public class e1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		float x = 1.1f;
+		float y = 2.222f;
+		double xx = 3.563;
+		double yy = 5.13;
+		System.out.println(x + y);
+		System.out.println(xx+yy);
+
+	}
+
+}
