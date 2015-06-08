@@ -1,0 +1,12 @@
+package Mathematics_and_Probability;
+
+public class e2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int a = 1234567890;
+		long b = 1234567890132L;//if we do not add L, it will be int by default
+
+	}
+
+}
