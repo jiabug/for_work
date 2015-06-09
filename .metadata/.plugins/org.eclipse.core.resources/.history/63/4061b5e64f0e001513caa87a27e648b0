@@ -1,0 +1,22 @@
+package Mathematics_and_Probability;
+
+/*
+ * Given two lines on a Cartesian plane, determine whether the two lines would intersect.
+ */
+
+public class line_e3 {
+	static double epsilon = 0.00000001;
+	private double slope;
+	private double y_intersect;
+	
+	public line_e3(double s, double y){
+		slope = s;
+		y_intersect = y;
+	}
+	
+	public boolean intersect(line_e3 line2){
+		//the reason we compare the y_intersect is to judge whether the two lines are the same lines.
+		return (Math.abs(slope - line2.slope) < epsilon) || (Math.abs(y_intersect - line2.y_intersect) > epsilon);
+	}
+
+}

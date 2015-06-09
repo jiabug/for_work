@@ -1,0 +1,38 @@
+package Mathematics_and_Probability;
+
+/*
+ * Given two lines on a Cartesian plane, determine whether the two lines would intersect.
+ */
+
+public class line_e3 {
+	static double epsilon = 0.00000001;
+	private double slope;
+	private double y_intersect;
+	
+	public line_e3(double s, double y){
+		slope = s;
+		y_intersect = y;
+	}
+	
+	public boolean intersect(line_e3 line2){
+		/*the reason we compare the y_intersect is to judge whether the two lines are the same lines.
+		 *because if they have the same slope and same y_intersect they will be same lines. if they do not have 
+		 *the same slope, they also intersect in the y-axis.
+		 * 
+		 */
+		return (Math.abs(slope - line2.slope) > epsilon) || (Math.abs(y_intersect - line2.y_intersect) < epsilon);
+	}
+	/*
+	 * In problems like this, be aware of the following
+	 * 1.Ask questions. This question has a lot of unknowns -- ask questions to clarify them. Many interviewers
+	 *   intentionally ask vague questions to see if you'll clarify your assumptions.
+	 * 2.When possible, design and use data structures. It shows that you understand and care about object-oriented
+	 *   design.
+	 * 3.Think through which data structures you design to represent a line. There are a lot of options, with lots
+	 *   of trade-offs. Pick one, and explain your choice.
+	 * 4.Do not assume that the slope and y-intersect are integers.
+	 * 5.Understand limitations of floating point representations. Never check for equality with ==. Instead, check
+	 *   if the difference is less than an epsilon value.
+	 */
+
+}
