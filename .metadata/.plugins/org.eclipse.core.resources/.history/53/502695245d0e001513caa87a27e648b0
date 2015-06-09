@@ -1,0 +1,65 @@
+package Mathematics_and_Probability;
+/*
+ * Write methods to implement the multiply, subtract, and divide operations for integers. Use only the add operator.
+ */
+public class e4 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	//Minus
+	public static int negate(int a){
+		int neg = 0;
+		int b = a < 0 ? 1 : -1;
+		while (a != 0){
+			a += b;
+			neg += b;
+		}
+		return neg;
+	}
+	public static int minus(int a, int b){
+		return a + negate(b);
+	}
+	public static int minus_my(int a, int b){
+		int value;
+		if (a >= 0){
+			value = 1;
+			while (a != b){
+				b += value;
+			}
+		} else {
+			value = -1;
+			while (a != b){
+				b += value;
+			}
+		}
+		return value;
+	}
+	
+	//Multiplication
+	public static int multiply(int a, int b){
+		if (a < b){
+			return multiply(b, a);//algorithm is faster if b < a. the times of summation will be less.
+		}
+		int sum = 0;
+		for (int i = abs(b); i > 0; i--){// consider whether we need to add the equal operator or not.
+			sum += a;
+		}
+		if (b < 0){
+			sum = negate(sum);
+		}
+		return sum;
+	}
+	public static int abs(int a){
+		if (a < 0){
+			a = negate(a);
+		}
+		return a;
+	}
+	
+	//Division
+	
+
+}

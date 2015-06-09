@@ -9,7 +9,16 @@ public class e2 {
 		System.out.println("Double.MAX_EXPONENT:"+Double.MAX_EXPONENT);
 		System.out.println("Double.MAX_VALUE:"+Double.MAX_VALUE);
 		
-
+		
+		//i++ or ++i is same for the for loop
+		System.out.println("i++:");
+		for (int i = 0; i < 3; i++){
+			System.out.println(i);
+		}
+		System.out.println("++i:");
+		for (int i = 0; i < 3; ++i){
+			System.out.println(i);
+		}
 	}
 
 }

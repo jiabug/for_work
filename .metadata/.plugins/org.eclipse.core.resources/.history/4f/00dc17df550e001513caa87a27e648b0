@@ -1,0 +1,22 @@
+package Mathematics_and_Probability;
+/*
+ * Write methods to implement the multiply, subtract, and divide operations for integers. Use only the add operator.
+ */
+public class e4 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public static int negate(int a){
+		int neg = 0;
+		int b = a < 0 ? 1 : -1;
+		while (a != 0){
+			a += b;
+			neg += b;
+		}
+		return neg;
+	}
+
+}
