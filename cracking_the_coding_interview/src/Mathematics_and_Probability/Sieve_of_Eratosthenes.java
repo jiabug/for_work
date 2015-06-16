@@ -1,5 +1,7 @@
 package Mathematics_and_Probability;
 
+import java.math.BigDecimal;
+
 public class Sieve_of_Eratosthenes {
 	public boolean[] findprime(int max){
 		boolean [] array = new boolean[max+1];
@@ -40,9 +42,23 @@ public class Sieve_of_Eratosthenes {
 		for (boolean f : flags){
 			System.out.println(f);
 		}
+		
+		double d = 0.000002e3;
+		System.out.println(1.0/3.0);
+		Double d1 = new Double("123.2");
+		System.out.println(d1.doubleValue());
+		System.out.println(Double.valueOf(d));
+		
 	}
-
+	
+	public static double mul(double v1,double v2){
+        BigDecimal b1 = new BigDecimal(Double.toString(v1));
+        BigDecimal b2 = new BigDecimal(Double.toString(v2));
+        return b1.multiply(b2).doubleValue();
+    }
 }
+
+
 
 
 
