@@ -78,7 +78,7 @@ public class e7 {
 		q3.add(1);// if k == 1, we need to return a smallest number among 1, max_value, max_value
 		
 		
-		for (int i = 1; i <= k; i++){
+		for (int i = 1; i <= k; i++){ // i begin with 1 not 0
 			int min3 = q3.size() > 0 ? q3.peek() : Integer.MAX_VALUE;
 			int min5 = q5.size() > 0 ? q5.peek() : Integer.MAX_VALUE;
 			int min7 = q7.size() > 0 ? q7.peek() : Integer.MAX_VALUE;
