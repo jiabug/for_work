@@ -34,7 +34,11 @@ public class introduction {
         System.out.println("s4:" + s4 );
         System.out.println(-5 << 3);
         String s5 = Integer.toBinaryString(~(-1>>>(32-3)));
+        
         System.out.println("s5:" + s5);
+        String s6 = Integer.toBinaryString(~0);
+        System.out.println("~0:" + ~0);
+        System.out.println("~0 == -1:" + (~0 == -1));
 	}
 	
 	public boolean getBit(int num, int i){
@@ -54,9 +58,11 @@ public class introduction {
 		return num & ((1<<i) - 1);
 	}
 	//clear all bits from i through 0 (inclusive).
-	public int clearBit_2(int num, int i){
-		return (num & ~(-1>>>(31-i)));//can not use ~0 << i because there is an operator bit.
+	public static boolean clearBit_2(int num, int i){
+		//return (num & ~(-1>>>(31-i)));//can not use ~0 << i because there is an operator bit.
 		//return (num & (-1 << (i+1)))
+		return ~0 << (i+1) == ~(-1>>>(31-i));//we can use ~0 << (i + 1). 为什么刚开始我认为不可以呢？ 什么是operator bit？
+		
 	}
 	
 	public int updateBit(int num, int i, int v){
