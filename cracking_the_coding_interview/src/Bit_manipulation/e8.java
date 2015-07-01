@@ -32,7 +32,7 @@ public class e8 {
 		}
 		
 		byte mask_start = (byte) (0xFF >> (start_offset));
-		byte mask_end = (byte) ~(0xFF >> (end_offset+1));
+		byte mask_end = (byte) ~(0xFF >> (end_offset+1));//do not forget to add 1!!!!
 		
 		if (x1/8 == x2/8){
 			byte mask = (byte) (mask_start & mask_end);
