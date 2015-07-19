@@ -14,8 +14,9 @@ public class Final_test {
 		String e = c + 2;
 		System.out.println("a == d: " + (a == d));
 		System.out.println("a == \"hello2\": " + (a == "hello2"));
-		System.out.println("a == e: " + (a == e));
+		System.out.println("a == e: " + (a == e));//we use new to set e because of the "+"
 		System.out.println("a.equals(e): " + a.equals(e));
+		System.out.println("c == b:" + c == b);
 		
 		
 		final String f = getHello();
